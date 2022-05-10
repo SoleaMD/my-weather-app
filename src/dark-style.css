@@ -1,0 +1,149 @@
+body {
+  background-color: #524a4e;
+  font-family: "Patrick Hand", cursive;
+}
+
+h1,
+h3,
+h6 {
+  color: white;
+}
+
+img {
+  width: 50px;
+  margin-top: -5px;
+}
+
+img:hover {
+  cursor: pointer;
+  background-color: #2d2723;
+  border-radius: 4px;
+}
+
+.form-control {
+  display: inline;
+  width: 270px;
+  background-color: #c6c6c6;
+  border-color: black;
+}
+
+.btn-design {
+  background-color: #2d2723;
+  border-color: black;
+  position: relative;
+  top: -2px;
+  color: white;
+}
+
+.btn-design:hover {
+  color: white;
+}
+
+.time-title {
+  font-family: "Patrick Hand", cursive;
+  font-size: 25px;
+  text-align: center;
+  color: white;
+}
+.clock {
+  text-align: center;
+  font-family: "Share Tech Mono", monospace;
+  color: white;
+  font-size: 35px;
+}
+
+.note {
+  text-align: center;
+  color: white;
+  font-family: "Patrick Hand", cursive;
+}
+
+.choice-of-degree {
+  text-align: center;
+  color: white;
+  font-size: 23px;
+}
+
+.celsius:hover,
+.fahrenheit:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.card-subtitle {
+  color: #4a403a;
+  font-weight: bold;
+}
+
+.card {
+  width: 200px;
+  border: 5px solid #121212;
+  box-shadow: 8px 8px #121212;
+}
+
+.card-body {
+  text-align: center;
+  background-color: #807a69;
+}
+
+.card-days {
+  width: 135px;
+  border: 3px solid #121212;
+  box-shadow: 5px 5px #121212;
+  margin-top: 50px;
+  margin-left: 20px;
+}
+
+.other-data {
+  text-align: center;
+  color: white;
+}
+
+.humidity,
+.wind,
+.degrees-outside {
+  font-size: 20px;
+  font-style: italic;
+}
+
+.theme-title {
+  margin-top: 20px;
+  text-align: center;
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.light {
+  color: #e5dcc3;
+  border-color: #e5dcc3;
+}
+
+.light:hover {
+  color: white;
+  background-color: #c7bea2;
+  border-color: #c7bea2;
+}
+.dark {
+  border-width: 3px;
+  font-weight: bold;
+}
+
+.light-button {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.dark-button {
+  margin-top: 10px;
+  text-align: left;
+}
+
+.credits {
+  font-size: 11px;
+  font-family: "Share Tech Mono", monospace;
+  text-align: center;
+  margin-top: 20px;
+  color: white;
+}

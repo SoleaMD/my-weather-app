@@ -1,0 +1,132 @@
+body {
+  background-color: #d7e9f7;
+  font-family: "Patrick Hand", cursive;
+}
+
+img {
+  width: 50px;
+  margin-top: -5px;
+}
+
+img:hover {
+  cursor: pointer;
+  background-color: #8cc7f4;
+  border-radius: 4px;
+}
+
+.form-control {
+  display: inline;
+  width: 270px;
+  background-color: #fcfcfc;
+  border-color: black;
+}
+
+.btn-design {
+  background-color: #eeeeee;
+  border-color: black;
+  position: relative;
+  top: -2px;
+}
+.time-title {
+  font-family: "Patrick Hand", cursive;
+  font-size: 25px;
+  text-align: center;
+  color: #293a80;
+}
+.clock {
+  text-align: center;
+  font-family: "Share Tech Mono", monospace;
+  color: #293a80;
+  font-size: 35px;
+}
+
+.note {
+  text-align: center;
+  color: #293a80;
+  font-family: "Patrick Hand", cursive;
+}
+
+.choice-of-degree {
+  text-align: center;
+  color: #293a80;
+  font-size: 23px;
+}
+
+.celsius:hover,
+.fahrenheit:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.card-subtitle {
+  color: #6c757d !important;
+  font-weight: bold;
+}
+
+.card {
+  width: 200px;
+  border: 5px solid #8cc7f4;
+  box-shadow: 8px 8px #8cc7f4;
+}
+
+.card-body {
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+}
+
+.card-days {
+  width: 135px;
+  border: 3px solid #8cc7f4;
+  box-shadow: 5px 5px #8cc7f4;
+  margin-top: 50px;
+  margin-left: 20px;
+}
+
+.other-data {
+  text-align: center;
+  color: #293a80;
+}
+
+.humidity,
+.wind,
+.degrees-outside {
+  font-size: 20px;
+  font-style: italic;
+}
+
+.theme-title {
+  margin-top: 20px;
+  text-align: center;
+  color: #293a80;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.light {
+  color: #4700d8;
+  border-color: #4700d8;
+}
+
+.light:hover {
+  color: white;
+  background-color: #4700d8;
+}
+
+.light-button {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.dark-button {
+  margin-top: 10px;
+  text-align: left;
+}
+
+.credits {
+  font-size: 11px;
+  font-family: "Share Tech Mono", monospace;
+  text-align: center;
+  margin-top: 20px;
+  color: #293a80;
+}
