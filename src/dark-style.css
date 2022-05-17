@@ -20,6 +20,10 @@ img:hover {
   border-radius: 4px;
 }
 
+a {
+  text-decoration: none;
+}
+
 .form-control {
   display: inline;
   width: 270px;
@@ -146,4 +150,8 @@ img:hover {
   text-align: center;
   margin-top: 20px;
   color: white;
+}
+
+#selected-degrees {
+  text-decoration: underline;
 }

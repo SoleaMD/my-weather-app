@@ -98,6 +98,7 @@ function displayTemperature(response) {
   );
   let wind = document.querySelector(".wind");
   wind.innerHTML = `Wind: ${windSpeed}km/h`;
+  celsiusDegrees = response.data.main.temp;
 }
 
 // Obtain weather data using coordinates
@@ -148,6 +149,7 @@ function obtainTemperature(response) {
   );
   let wind = document.querySelector(".wind");
   wind.innerHTML = `Wind: ${windSpeed}km/h`;
+  celsiusDegrees = response.data.main.temp;
 }
 
 let img = document.querySelector("img");
@@ -181,3 +183,54 @@ let darkButton = document.querySelector(
   ".dark-button"
 );
 darkButton.addEventListener("click", changeDark);
+
+// Changing Celsius and Fahrenheit Degrees
+
+function changeCelsius(event) {
+  event.preventDefault();
+  let zeroDayCelsius = document.querySelector(
+    "#zero-day-degrees"
+  );
+  zeroDayCelsius.innerHTML = `${Math.round(
+    celsiusDegrees
+  )}º`;
+  let selectedCelsius = document.querySelector(
+    "#selected-degrees"
+  );
+  selectedCelsius.innerHTML = ` Celsius`;
+}
+
+let degreesCelsius =
+  document.querySelector(".celsius");
+
+degreesCelsius.addEventListener(
+  "click",
+  changeCelsius
+);
+
+function changeFahrenheit(event) {
+  event.preventDefault();
+  let zeroDayFahrenheit = document.querySelector(
+    "#zero-day-degrees"
+  );
+  let fahrenheitDegrees = Math.round(
+    (celsiusDegrees * 9) / 5 + 32
+  );
+  zeroDayFahrenheit.innerHTML = `${fahrenheitDegrees}º`;
+
+  let selectedFahrenheit = document.querySelector(
+    "#selected-degrees"
+  );
+  selectedFahrenheit.innerHTML = ` Fahrenheit`;
+}
+
+let degreesFahrenheit = document.querySelector(
+  ".fahrenheit"
+);
+
+degreesFahrenheit.addEventListener(
+  "click",
+  changeFahrenheit
+);
+
+let celsiusDegrees = null;
