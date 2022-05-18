@@ -92,12 +92,24 @@ function displayTemperature(response) {
   let description = document.querySelector(
     ".weather-description"
   );
-  description.innerHTML = `${response.data.weather[0].main}`;
+  description.innerHTML = `${response.data.weather[0].description}`;
   let windSpeed = Math.round(
     response.data.wind.speed
   );
   let wind = document.querySelector(".wind");
   wind.innerHTML = `Wind: ${windSpeed}km/h`;
+  let iconType = response.data.weather[0].icon;
+  let icon = document.querySelector(
+    ".current-weather-emoji"
+  );
+  icon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${iconType}@2x.png`
+  );
+  icon.setAttribute(
+    "alt",
+    response.data.weather[0].description
+  );
   celsiusDegrees = response.data.main.temp;
 }
 
@@ -149,6 +161,18 @@ function obtainTemperature(response) {
   );
   let wind = document.querySelector(".wind");
   wind.innerHTML = `Wind: ${windSpeed}km/h`;
+  let iconType = response.data.weather[0].icon;
+  let icon = document.querySelector(
+    ".current-weather-emoji"
+  );
+  icon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${iconType}@2x.png`
+  );
+  icon.setAttribute(
+    "alt",
+    response.data.weather[0].description
+  );
   celsiusDegrees = response.data.main.temp;
 }
 

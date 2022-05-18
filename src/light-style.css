@@ -87,6 +87,10 @@ a {
   margin-left: 20px;
 }
 
+.weather-description {
+  text-transform: capitalize;
+}
+
 .other-data {
   text-align: center;
   color: #293a80;
