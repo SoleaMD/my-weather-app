@@ -111,6 +111,7 @@ function displayTemperature(response) {
     response.data.weather[0].description
   );
   celsiusDegrees = response.data.main.temp;
+  tempFeels = response.data.main.feels_like;
 }
 
 // Obtain weather data using coordinates
@@ -174,6 +175,7 @@ function obtainTemperature(response) {
     response.data.weather[0].description
   );
   celsiusDegrees = response.data.main.temp;
+  tempFeels = response.data.main.feels_like;
 }
 
 let img = document.querySelector("img");
@@ -222,6 +224,12 @@ function changeCelsius(event) {
     "#selected-degrees"
   );
   selectedCelsius.innerHTML = ` Celsius`;
+  let celsiusFeels = document.querySelector(
+    ".degrees-outside"
+  );
+  celsiusFeels.innerHTML = `Feels like: ${Math.round(
+    tempFeels
+  )}º`;
 }
 
 let degreesCelsius =
@@ -246,6 +254,12 @@ function changeFahrenheit(event) {
     "#selected-degrees"
   );
   selectedFahrenheit.innerHTML = ` Fahrenheit`;
+  let fahrenheitFeels = document.querySelector(
+    ".degrees-outside"
+  );
+  fahrenheitFeels.innerHTML = `Feels like: ${Math.round(
+    (tempFeels * 9) / 5 + 32
+  )}º`;
 }
 
 let degreesFahrenheit = document.querySelector(
@@ -258,3 +272,4 @@ degreesFahrenheit.addEventListener(
 );
 
 let celsiusDegrees = null;
+let tempFeels = null;
