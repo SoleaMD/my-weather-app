@@ -112,6 +112,8 @@ function displayTemperature(response) {
   );
   celsiusDegrees = response.data.main.temp;
   tempFeels = response.data.main.feels_like;
+
+  displayForecast();
 }
 
 // Obtain weather data using coordinates
@@ -176,6 +178,8 @@ function obtainTemperature(response) {
   );
   celsiusDegrees = response.data.main.temp;
   tempFeels = response.data.main.feels_like;
+
+  displayForecast();
 }
 
 let img = document.querySelector("img");
@@ -273,3 +277,62 @@ degreesFahrenheit.addEventListener(
 
 let celsiusDegrees = null;
 let tempFeels = null;
+
+// Adding rest of the week forecast
+
+function displayForecast() {
+  let weekForecast =
+    document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let firstForecastDays = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+  ];
+  let secondForecastDays = ["Thursday", "Friday"];
+  let firstDays = firstForecastDays.forEach(
+    function (day) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-4 forecast-day">
+            <div class="card-days mx-auto">
+              <div class="card-body">
+                <h6 class="card-subtitle mb-2">
+                  ${day}
+                </h6>
+                <h3 class="card-text">
+                  <span class="weather-emoji"
+                    >☀️</span
+                  >
+                  <span class="degrees">22º</span>
+                </h3>
+              </div>
+            </div>
+          </div>`;
+    }
+  );
+  let secondDays = secondForecastDays.forEach(
+    function (day) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-6 forecast-day">
+            <div class="card-days mx-auto">
+              <div class="card-body">
+                <h6 class="card-subtitle mb-2">
+                  ${day}
+                </h6>
+                <h3 class="card-text">
+                  <span class="weather-emoji"
+                    >☀️</span
+                  >
+                  <span class="degrees">22º</span>
+                </h3>
+              </div>
+            </div>
+          </div>`;
+    }
+  );
+  forecastHTML = forecastHTML + `</div>`;
+  weekForecast.innerHTML = forecastHTML;
+}
