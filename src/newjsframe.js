@@ -69,6 +69,12 @@ newCity.addEventListener("submit", readCity);
 
 // Obtain weather data using search form
 
+function obtainForecast(coordinates) {
+  let apiKey = "31494f01ec42e369b1839339e1ef40bd";
+  let forecastApiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(forecastApiUrl).then(displayForecast);
+}
+
 function displayTemperature(response) {
   let temperature = Math.round(
     response.data.main.temp
@@ -113,7 +119,7 @@ function displayTemperature(response) {
   celsiusDegrees = response.data.main.temp;
   tempFeels = response.data.main.feels_like;
 
-  displayForecast();
+  obtainForecast(response.data.coord);
 }
 
 // Obtain weather data using coordinates
@@ -179,7 +185,7 @@ function obtainTemperature(response) {
   celsiusDegrees = response.data.main.temp;
   tempFeels = response.data.main.feels_like;
 
-  displayForecast();
+  obtainForecast(response.data.coord);
 }
 
 let img = document.querySelector("img");
@@ -280,7 +286,8 @@ let tempFeels = null;
 
 // Adding rest of the week forecast
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let weekForecast =
     document.querySelector("#forecast");
 
