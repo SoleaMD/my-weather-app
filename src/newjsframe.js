@@ -286,18 +286,26 @@ let tempFeels = null;
 
 // Adding rest of the week forecast
 
+function formatDate(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let forecastDay = date.getDay();
+  return weekDays[forecastDay];
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
   let weekForecast =
     document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
   let firstForecastDays = [
-    "Monday",
-    "Tuesday",
-    "Wednesday",
+    response.data.daily[1],
+    response.data.daily[2],
+    response.data.daily[3],
   ];
-  let secondForecastDays = ["Thursday", "Friday"];
+  let secondForecastDays = [
+    response.data.daily[4],
+    response.data.daily[5],
+  ];
   let firstDays = firstForecastDays.forEach(
     function (day) {
       forecastHTML =
@@ -306,14 +314,27 @@ function displayForecast(response) {
             <div class="card-days mx-auto">
               <div class="card-body">
                 <h6 class="card-subtitle mb-2">
-                  ${day}
+                  ${formatDate(day.dt)}
                 </h6>
                 <h3 class="card-text">
-                  <span class="weather-emoji"
-                    >☀️</span
-                  >
-                  <span class="degrees">22º</span>
+                  <img src="https://openweathermap.org/img/wn/${
+                    day.weather[0].icon
+                  }@2x.png" class="current-weather-emoji" alt="${
+          day.weather[0].description
+        }"> <div>
+                  <span class="degrees">${Math.round(
+                    day.temp.max
+                  )}º /
+                   ${Math.round(
+                     day.temp.min
+                   )}º</span>
+                  </div>
                 </h3>
+                   <h6
+                  class="card-subtitle mb-2 weather-description"
+                >
+                  ${day.weather[0].description}
+                </h6>
               </div>
             </div>
           </div>`;
@@ -327,14 +348,26 @@ function displayForecast(response) {
             <div class="card-days mx-auto">
               <div class="card-body">
                 <h6 class="card-subtitle mb-2">
-                  ${day}
+                  ${formatDate(day.dt)}
                 </h6>
                 <h3 class="card-text">
-                  <span class="weather-emoji"
-                    >☀️</span
-                  >
-                  <span class="degrees">22º</span>
+                  <img src="https://openweathermap.org/img/wn/${
+                    day.weather[0].icon
+                  }@2x.png" class="current-weather-emoji" alt="${
+          day.weather[0].description
+        }"> <div>
+                  <span class="degrees">${Math.round(
+                    day.temp.max
+                  )}º /
+                  ${Math.round(
+                    day.temp.min
+                  )}º</span></div>
                 </h3>
+                   <h6
+                  class="card-subtitle mb-2 weather-description"
+                >
+                  ${day.weather[0].description}
+                </h6>
               </div>
             </div>
           </div>`;
