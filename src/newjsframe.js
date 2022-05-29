@@ -322,3 +322,14 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   weekForecast.innerHTML = forecastHTML;
 }
+
+// Adding a defaault city search
+
+function defaultCity(city) {
+  let apiKey = "31494f01ec42e369b1839339e1ef40bd";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+defaultCity("Madrid");
