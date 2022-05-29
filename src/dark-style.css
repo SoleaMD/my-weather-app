@@ -62,19 +62,6 @@ a {
   font-family: "Patrick Hand", cursive;
 }
 
-.choice-of-degree {
-  text-align: center;
-  color: white;
-  font-size: 23px;
-}
-
-.celsius:hover,
-.fahrenheit:hover {
-  cursor: pointer;
-  text-decoration: underline;
-  font-weight: bold;
-}
-
 .card-subtitle {
   color: #4a403a;
   font-weight: bold;
@@ -110,7 +97,9 @@ a {
 
 .humidity,
 .wind,
-.degrees-outside {
+.degrees-outside,
+.max-temperature,
+.min-temperature {
   font-size: 20px;
   font-style: italic;
 }
@@ -154,8 +143,4 @@ a {
   text-align: center;
   margin-top: 20px;
   color: white;
-}
-
-#selected-degrees {
-  text-decoration: underline;
 }

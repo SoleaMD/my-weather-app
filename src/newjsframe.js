@@ -116,8 +116,6 @@ function displayTemperature(response) {
     "alt",
     response.data.weather[0].description
   );
-  celsiusDegrees = response.data.main.temp;
-  tempFeels = response.data.main.feels_like;
 
   obtainForecast(response.data.coord);
 }
@@ -182,8 +180,6 @@ function obtainTemperature(response) {
     "alt",
     response.data.weather[0].description
   );
-  celsiusDegrees = response.data.main.temp;
-  tempFeels = response.data.main.feels_like;
 
   obtainForecast(response.data.coord);
 }
@@ -229,6 +225,20 @@ function formatDate(timestamp) {
 }
 
 function displayForecast(response) {
+  let maximumTemperature = Math.round(
+    response.data.daily[0].temp.max
+  );
+  let maxTemp = document.querySelector(
+    ".max-temperature"
+  );
+  maxTemp.innerHTML = `Highest: ${maximumTemperature}º`;
+  let minimumTemperature = Math.round(
+    response.data.daily[0].temp.min
+  );
+  let minTemp = document.querySelector(
+    ".min-temperature"
+  );
+  minTemp.innerHTML = `Lowest: ${minimumTemperature}º`;
   let weekForecast =
     document.querySelector("#forecast");
 
